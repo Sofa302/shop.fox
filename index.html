@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foxtrot — інтернет-магазин техніки</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="top-line">
+        <div class="container top-content">
+            <span>Доставка по Україні</span>
+            <div class="top-links">
+                <a href="#">Магазини</a>
+                <a href="#">Допомога</a>
+                <a href="#">Контакти</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header container">
+
+        <a href="#" class="logo">
+            <span>FOXTROT</span>
+            <b>●</b>
+        </a>
+
+        <a href="catalog.html" class="catalog-btn">
+             ☰
+            <span>Каталог</span>
+        </a>
+        <div class="search">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Я шукаю..."
+            >
+            <button id="searchBtn">⌕</button>
+        </div>
+
+        <div class="header-actions">
+
+            <button class="action" id="favoritesBtn">
+                <span class="action-icon">♡</span>
+                <span class="favorite-count" id="favoriteCount">0</span>
+                <small>Обране</small>
+            </button>
+
+            <button class="action">
+                <span class="action-icon">♙</span>
+                <small>Увійти</small>
+            </button>
+
+            <button class="action cart" id="cartBtn">
+                <span class="action-icon">🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+                <small>Кошик</small>
+            </button>
+
+        </div>
+    </div>
+
+    
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero container">
+
+        <div class="hero-content">
+
+            <span class="hero-label">ВЕЛИКІ ЗНИЖКИ</span>
+
+            <h1>
+                Техніка,<br>
+                яка робить<br>
+                життя простішим
+            </h1>
+
+            <p>
+                Обирай сучасну техніку за вигідними цінами
+            </p>
+
+            <button class="primary-btn">
+                Дивитися товари
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="circle"></div>
+
+            <div class="phone">
+                <div class="phone-screen">
+                    <span>50%</span>
+                    <small>SALE</small>
+                </div>
+            </div>
+
+            <div class="floating-card card-one">
+                📱
+            </div>
+
+            <div class="floating-card card-two">
+                💻
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section">
+
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Популярні товари</h2>
+                <a href="#">Дивитися всі →</a>
+            </div>
+
+            <div class="products" id="products">
+
+                <article
+                    class="product"
+                    data-name="Apple iPhone 15"
+                >
+
+                    <button class="favorite">♡</button>
+
+                    <span class="discount">-15%</span>
+
+                    <div class="product-image">
+                        📱
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(124)</span>
+                    </div>
+
+                    <h3>Apple iPhone 15 128GB</h3>
+
+                    <p class="old-price">39 999 грн</p>
+
+                    <div class="product-bottom">
+                        <strong>33 999 грн</strong>
+
+                        <button
+                            class="buy-btn"
+                            data-product="Apple iPhone 15"
+                        >
+                            🛒
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="product"
+                    data-name="Samsung Galaxy S25"
+                >
+
+                    <button class="favorite">♡</button>
+
+                    <span class="discount">-10%</span>
+
+                    <div class="product-image">
+                        📱
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(87)</span>
+                    </div>
+
+                    <h3>Samsung Galaxy S25 256GB</h3>
+
+                    <p class="old-price">34 999 грн</p>
+
+                    <div class="product-bottom">
+                        <strong>31 499 грн</strong>
+
+                        <button
+                            class="buy-btn"
+                            data-product="Samsung Galaxy S25"
+                        >
+                            🛒
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="product"
+                    data-name="MacBook Air M3"
+                >
+
+                    <button class="favorite">♡</button>
+
+                    <span class="discount">-12%</span>
+
+                    <div class="product-image">
+                        💻
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(56)</span>
+                        
+                    </div>
+
+                    <h3>Apple MacBook Air 13 M3</h3>
+
+                    <p class="old-price">52 999 грн</p>
+
+                    <div class="product-bottom">
+                        <strong>46 499 грн</strong>
+
+                        <button
+                            class="buy-btn"
+                            data-product="MacBook Air M3"
+                        >
+                            🛒
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="product"
+                    data-name="Sony PlayStation 5"
+                >
+
+                    <button class="favorite">♡</button>
+
+                    <span class="discount">-8%</span>
+
+                    <div class="product-image">
+                        🎮
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>(231)</span>
+                    </div>
+
+                    <h3>Sony PlayStation 5 Slim</h3>
+
+                    <p class="old-price">25 999 грн</p>
+
+                    <div class="product-bottom">
+                        <strong>23 999 грн</strong>
+
+                        <button
+                            class="buy-btn"
+                            data-product="PlayStation 5"
+                        >
+                            🛒
+                        </button>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFITS -->
+
+    <section class="benefits container">
+
+        <div class="benefit">
+            <div>🚚</div>
+            <div>
+                <h3>Швидка доставка</h3>
+                <p>Доставимо замовлення по Україні</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div>🛡️</div>
+            <div>
+                <h3>Гарантія якості</h3>
+                <p>Тільки оригінальна продукція</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div>💳</div>
+            <div>
+                <h3>Зручна оплата</h3>
+                <p>Готівка або картка</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div>↩️</div>
+            <div>
+                <h3>Легке повернення</h3>
+                <p>14 днів на повернення</p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- CART -->
+
+<div class="cart-modal" id="cartModal">
+
+    <div class="cart-window">
+
+        <button class="close-cart" id="closeCart">×</button>
+
+        <h2>Ваш кошик</h2>
+
+        <div id="cartItems">
+            <p class="empty-cart">
+                Кошик поки що порожній
+            </p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div>
+                <span>Разом:</span>
+                <strong id="cartTotal">0 грн</strong>
+            </div>
+
+            <button class="primary-btn">
+                Оформити замовлення
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+            <div class="footer-logo">FOXTROT</div>
+            <p>Техніка для сучасного життя</p>
+        </div>
+
+        <div>
+            <h3>Покупцям</h3>
+            <a href="#">Доставка</a>
+            <a href="#">Оплата</a>
+            <a href="#">Гарантія</a>
+            <a href="#">Повернення</a>
+        </div>
+
+        <div>
+            <h3>Про магазин</h3>
+            <a href="#">Про нас</a>
+            <a href="#">Магазини</a>
+            <a href="#">Вакансії</a>
+            <a href="#">Контакти</a>
+        </div>
+
+        <div>
+            <h3>Ми на зв'язку</h3>
+            <strong class="phone-number">0 800 300 353</strong>
+            <p>Щодня: 08:00–22:00</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Demo Shop. Навчальний макет.
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
