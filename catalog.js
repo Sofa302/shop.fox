@@ -443,3 +443,22 @@ const catalog = [
         photo: "https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?w=600"
     }
 ];
+
+const resetFilters = document.getElementById("resetFilters");
+
+resetFilters.addEventListener("click", function () {
+
+    // Категорія → Усі товари
+    document.querySelector(
+        'input[name="category"][value="all"]'
+    ).checked = true;
+
+    // Ціна → Будь-яка ціна
+    document.querySelector(
+        'input[name="priceRange"][value="all"]'
+    ).checked = true;
+
+    // Додаткові → зняти галочку
+    document.getElementById("discountFilter").checked = false;
+
+});

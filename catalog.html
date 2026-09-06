@@ -4,875 +4,650 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="catalog.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.js">
     <title>Каталог — Foxtrot</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
 
-    <link
-        rel="stylesheet"
-        href="catalog.css"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
 
 
-<!-- ==========================
+    <!-- ==========================
      HEADER
 ========================== -->
 
-<header class="header">
+    <header class="header">
 
-    <div class="top-line">
+        <div class="top-line">
 
-        <div class="container top-content">
+            <div class="container top-content">
 
-            <span>
-                Доставка по Україні
-            </span>
+                <span>
+                    Доставка по Україні
+                </span>
 
-            <div class="top-links">
+                <div class="top-links">
 
-                <a href="index.html">
-                    Головна
-                </a>
+                    <a href="index.html">
+                        Головна
+                    </a>
 
-                <a href="#">
-                    Магазини
-                </a>
+                    <a href="#">
+                        Магазини
+                    </a>
 
-                <a href="#">
-                    Допомога
-                </a>
+                    <a href="#">
+                        Допомога
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+
+        <div class="main-header container">
 
 
-    <div class="main-header container">
-
-
-        <a
-            href="index.html"
-            class="logo"
-        >
-            <span>FOXTROT</span>
-            <b>●</b>
-        </a>
-
-
-        <button
-            class="catalog-btn"
-            id="catalogBtn"
-        >
-            ☰
-            <span>Каталог</span>
-        </button>
-
-
-        <div class="search">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Я шукаю..."
-            >
-
-            <button id="searchBtn">
-                ⌕
-            </button>
-
-        </div>
-
-
-        <div class="header-actions">
-
-
-            <button
-                class="action"
-                id="favoritesBtn"
-            >
-
-                <span class="action-icon">
-                    ♡
-                </span>
-
-                <span
-                    class="favorite-count"
-                    id="favoriteCount"
-                >
-                    0
-                </span>
-
-                <small>
-                    Обране
-                </small>
-
-            </button>
-
-
-            <button class="action">
-
-                <span class="action-icon">
-                    ♙
-                </span>
-
-                <small>
-                    Увійти
-                </small>
-
-            </button>
-
-
-            <button
-                class="action cart"
-                id="cartBtn"
-            >
-
-                <span class="action-icon">
-                    🛒
-                </span>
-
-                <span
-                    class="cart-count"
-                    id="cartCount"
-                >
-                    0
-                </span>
-
-                <small>
-                    Кошик
-                </small>
-
-            </button>
-
-
-        </div>
-
-    </div>
-
-
-    <nav class="navigation container">
-
-        <a href="catalog.html">
-            Каталог
-        </a>
-
-        <a href="#">
-            Смартфони
-        </a>
-
-        <a href="#">
-            Ноутбуки
-        </a>
-
-        <a href="#">
-            Телевізори
-        </a>
-
-        <a href="#">
-            Побутова техніка
-        </a>
-
-        <a href="#">
-            Ігрова техніка
-        </a>
-
-        <a
-            href="#"
-            class="sale-link"
-        >
-            Акції
-        </a>
-
-    </nav>
-
-</header>
-
-
-
-<!-- ==========================
-     CATALOG
-========================== -->
-
-<main class="catalog-page">
-
-    <div class="container">
-
-
-        <!-- ХЛІБНІ КРИХТИ -->
-
-        <div class="breadcrumbs">
-
-            <a href="index.html">
-                Головна
+            <a href="index.html" class="logo">
+                <span>FOXTROT</span>
+                <b>●</b>
             </a>
 
-            <span>›</span>
 
-            <span>
-                Каталог
-            </span>
-
-        </div>
+            <button class="catalog-btn" id="catalogBtn">
+                ☰
+                <span>Каталог</span>
+            </button>
 
 
-        <div class="catalog-title">
+            <div class="search">
 
-            <div>
+                <input type="text" id="searchInput" placeholder="Я шукаю...">
 
-                <h1>
-                    Каталог товарів
-                </h1>
-
-                <p id="productsCount">
-                    60 товарів
-                </p>
+                <button id="searchBtn">
+                    ⌕
+                </button>
 
             </div>
 
 
-            <button
-                class="mobile-filter-btn"
-                id="mobileFilterBtn"
-            >
-                ⚙ Фільтри
-            </button>
+            <div class="header-actions">
+
+
+                <button class="action" id="favoritesBtn">
+
+                    <span class="action-icon">
+                        ♡
+                    </span>
+
+                    <span class="favorite-count" id="favoriteCount">
+                        0
+                    </span>
+
+                    <small>
+                        Обране
+                    </small>
+
+                </button>
+
+
+                <button class="action">
+
+                    <span class="action-icon">
+                        ♙
+                    </span>
+
+                    <small>
+                        Увійти
+                    </small>
+
+                </button>
+
+
+                <button class="action cart" id="cartBtn">
+
+                    <span class="action-icon">
+                        🛒
+                    </span>
+
+                    <span class="cart-count" id="cartCount">
+                        0
+                    </span>
+
+                    <small>
+                        Кошик
+                    </small>
+
+                </button>
+
+
+            </div>
 
         </div>
 
+        <main class="catalog-page">
+
+            <div class="container">
 
 
-        <div class="catalog-layout">
+                <!-- ХЛІБНІ КРИХТИ -->
+
+                <div class="breadcrumbs">
+
+                    <a href="index.html">
+                        Головна
+                    </a>
+
+                    <span>›</span>
+
+                    <span>
+                        Каталог
+                    </span>
+
+                </div>
 
 
-            <!-- ==========================
+                <div class="catalog-title">
+
+                    <div>
+
+                        <h1>
+                            Каталог товарів
+                        </h1>
+
+                        <p id="productsCount">
+                            60 товарів
+                        </p>
+
+                    </div>
+
+
+                    <button class="mobile-filter-btn" id="mobileFilterBtn">
+                        ⚙ Фільтри
+                    </button>
+
+                </div>
+
+
+
+                <div class="catalog-layout">
+
+
+                    <!-- ==========================
                  SIDEBAR
             ========================== -->
 
-            <aside
-                class="filters-sidebar"
-                id="filtersSidebar"
-            >
+                    <aside class="filters-sidebar" id="filtersSidebar">
 
-                <div class="filter-header">
+                        <div class="filter-header">
 
-                    <h2>
-                        Фільтри
-                    </h2>
+                            <h2>
+                                Фільтри
+                            </h2>
 
-                    <button
-                        id="resetFilters"
-                        class="reset-filters"
-                    >
-                        Скинути
-                    </button>
+                            <button  id="resetFilters" class="reset-filters">
+                                Скинути
+                            </button>
 
-                </div>
+                        </div>
 
 
-                <!-- КАТЕГОРІЯ -->
+                        <!-- КАТЕГОРІЯ -->
 
-                <div class="filter-section">
+                        <div class="filter-section">
 
-                    <h3>
-                        Категорія
-                    </h3>
+                            <h3>
+                                Категорія
+                            </h3>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="all"
-                            checked
-                        >
+                                <input type="radio" name="category" value="all" checked>
 
-                        <span>
-                            Усі товари
-                        </span>
+                                <span>
+                                    Усі товари
+                                </span>
 
-                    </label>
+                            </label>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="Смартфони"
-                        >
+                                <input type="radio" name="category" value="Смартфони">
 
-                        <span>
-                            📱 Смартфони
-                        </span>
+                                <span>
+                                    📱 Смартфони
+                                </span>
 
-                    </label>
+                            </label>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="Побутова техніка"
-                        >
+                                <input type="radio" name="category" value="Побутова техніка">
 
-                        <span>
-                            🏠 Побутова техніка
-                        </span>
+                                <span>
+                                    🏠 Побутова техніка
+                                </span>
 
-                    </label>
+                            </label>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="Комп'ютерна техніка"
-                        >
+                                <input type="radio" name="category" value="Комп'ютерна техніка">
 
-                        <span>
-                            🖥️ Комп'ютерна техніка
-                        </span>
+                                <span>
+                                    🖥️ Комп'ютерна техніка
+                                </span>
 
-                    </label>
+                            </label>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="Ноутбуки"
-                        >
+                                <input type="radio" name="category" value="Ноутбуки">
 
-                        <span>
-                            💻 Ноутбуки
-                        </span>
+                                <span>
+                                    💻 Ноутбуки
+                                </span>
 
-                    </label>
+                            </label>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="Телевізори"
-                        >
+                                <input type="radio" name="category" value="Телевізори">
 
-                        <span>
-                            📺 Телевізори
-                        </span>
+                                <span>
+                                    📺 Телевізори
+                                </span>
 
-                    </label>
+                            </label>
 
 
-                    <label class="filter-option">
+                            <label class="filter-option">
 
-                        <input
-                            type="radio"
-                            name="category"
-                            value="Ігрова техніка"
-                        >
+                                <input type="radio" name="category" value="Ігрова техніка">
 
-                        <span>
-                            🎮 Ігрова техніка
-                        </span>
+                                <span>
+                                    🎮 Ігрова техніка
+                                </span>
 
-                    </label>
+                            </label>
 
-                </div>
+                        </div>
 
 
 
-                <!-- ЦІНА -->
 
-                <div class="filter-section">
+                        <!-- ШВИДКИЙ ДІАПАЗОН -->
 
-                    <h3>
-                        Ціна, грн
-                    </h3>
+                        <div class="filter-section">
 
+                            <h3>
+                                Ціновий діапазон
+                            </h3>
 
-                    <div class="price-inputs">
 
-                        <input
-                            type="number"
-                            id="minPrice"
-                            placeholder="від"
-                            min="0"
-                        >
+                            <label class="filter-option">
 
-                        <span>—</span>
+                                <input type="radio" name="priceRange" value="all" checked>
 
-                        <input
-                            type="number"
-                            id="maxPrice"
-                            placeholder="до"
-                            min="0"
-                        >
+                                <span>
+                                    Будь-яка ціна
+                                </span>
 
-                    </div>
+                            </label>
 
 
-                    <button
-                        class="apply-price"
-                        id="applyPrice"
-                    >
-                        Застосувати
-                    </button>
+                            <label class="filter-option">
 
-                </div>
+                                <input type="radio" name="priceRange" value="0-5000">
 
+                                <span>
+                                    До 5 000 грн
+                                </span>
 
+                            </label>
 
-                <!-- ШВИДКИЙ ДІАПАЗОН -->
 
-                <div class="filter-section">
+                            <label class="filter-option">
 
-                    <h3>
-                        Ціновий діапазон
-                    </h3>
+                                <input type="radio" name="priceRange" value="5000-15000">
 
+                                <span>
+                                    5 000–15 000 грн
+                                </span>
 
-                    <label class="filter-option">
+                            </label>
 
-                        <input
-                            type="radio"
-                            name="priceRange"
-                            value="all"
-                            checked
-                        >
 
-                        <span>
-                            Будь-яка ціна
-                        </span>
+                            <label class="filter-option">
 
-                    </label>
+                                <input type="radio" name="priceRange" value="15000-30000">
 
+                                <span>
+                                    15 000–30 000 грн
+                                </span>
 
-                    <label class="filter-option">
+                            </label>
 
-                        <input
-                            type="radio"
-                            name="priceRange"
-                            value="0-5000"
-                        >
 
-                        <span>
-                            До 5 000 грн
-                        </span>
+                            <label class="filter-option">
 
-                    </label>
+                                <input type="radio" name="priceRange" value="30000-50000">
 
+                                <span>
+                                    30 000–50 000 грн
+                                </span>
 
-                    <label class="filter-option">
+                            </label>
 
-                        <input
-                            type="radio"
-                            name="priceRange"
-                            value="5000-15000"
-                        >
 
-                        <span>
-                            5 000–15 000 грн
-                        </span>
+                            <label class="filter-option">
 
-                    </label>
+                                <input type="radio" name="priceRange" value="50000-999999">
 
+                                <span>
+                                    Від 50 000 грн
+                                </span>
 
-                    <label class="filter-option">
+                            </label>
 
-                        <input
-                            type="radio"
-                            name="priceRange"
-                            value="15000-30000"
-                        >
+                        </div>
 
-                        <span>
-                            15 000–30 000 грн
-                        </span>
 
-                    </label>
 
+                        <!-- ДОДАТКОВІ -->
 
-                    <label class="filter-option">
+                        <div class="filter-section">
 
-                        <input
-                            type="radio"
-                            name="priceRange"
-                            value="30000-50000"
-                        >
+                            <h3>
+                                Додатково
+                            </h3>
 
-                        <span>
-                            30 000–50 000 грн
-                        </span>
 
-                    </label>
+                            <label class="checkbox-option">
 
+                                <input type="checkbox" id="discountFilter">
 
-                    <label class="filter-option">
+                                <span>
+                                    Тільки зі знижкою
+                                </span>
 
-                        <input
-                            type="radio"
-                            name="priceRange"
-                            value="50000-999999"
-                        >
+                            </label>
 
-                        <span>
-                            Від 50 000 грн
-                        </span>
+                        </div>
 
-                    </label>
 
-                </div>
+                    </aside>
 
 
 
-                <!-- ДОДАТКОВІ -->
-
-                <div class="filter-section">
-
-                    <h3>
-                        Додатково
-                    </h3>
-
-
-                    <label class="checkbox-option">
-
-                        <input
-                            type="checkbox"
-                            id="discountFilter"
-                        >
-
-                        <span>
-                            Тільки зі знижкою
-                        </span>
-
-                    </label>
-
-                </div>
-
-
-            </aside>
-
-
-
-            <!-- ==========================
+                    <!-- ==========================
                  PRODUCTS
             ========================== -->
 
-            <section class="catalog-content">
+                    <section class="catalog-content">
 
 
-                <div class="catalog-toolbar">
+                        <div class="catalog-toolbar">
 
 
-                    <span
-                        id="resultText"
-                    >
-                        Знайдено товарів: 60
-                    </span>
+                            <span id="resultText">
+                                Знайдено товарів: 60
+                            </span>
 
 
-                    <select
-                        id="sortFilter"
-                        class="sort-select"
-                    >
+                            <select id="sortFilter" class="sort-select">
 
-                        <option value="default">
-                            За популярністю
-                        </option>
+                                <option value="default">
+                                    За популярністю
+                                </option>
 
-                        <option value="cheap">
-                            Спочатку дешевші
-                        </option>
+                                <option value="cheap">
+                                    Спочатку дешевші
+                                </option>
 
-                        <option value="expensive">
-                            Спочатку дорожчі
-                        </option>
+                                <option value="expensive">
+                                    Спочатку дорожчі
+                                </option>
 
-                        <option value="name">
-                            За назвою
-                        </option>
+                                <option value="name">
+                                    За назвою
+                                </option>
 
-                    </select>
+                            </select>
 
+
+                        </div>
+
+
+                        <div class="catalog-products" id="catalogProducts"></div>
+
+
+                        <div class="no-products" id="noProducts">
+
+                            <div>
+                                🔍
+                            </div>
+
+                            <h2>
+                                Товарів не знайдено
+                            </h2>
+
+                            <p>
+                                Спробуйте змінити параметри фільтрів
+                            </p>
+
+                            <button id="resetEmpty" class="primary-btn">
+                                Скинути фільтри
+                            </button>
+
+                        </div>
+
+
+                    </section>
 
                 </div>
 
+            </div>
 
-                <div
-                    class="catalog-products"
-                    id="catalogProducts"
-                ></div>
+        </main>
 
 
-                <div
-                    class="no-products"
-                    id="noProducts"
-                >
 
-                    <div>
-                        🔍
-                    </div>
+        <!-- ==========================
+     КОШИК
+========================== -->
 
-                    <h2>
-                        Товарів не знайдено
-                    </h2>
+        <div class="cart-modal" id="cartModal">
 
-                    <p>
-                        Спробуйте змінити параметри фільтрів
+            <div class="cart-window">
+
+                <button class="close-cart" id="closeCart">
+                    ×
+                </button>
+
+                <h2>
+                    Ваш кошик
+                </h2>
+
+                <div id="cartItems">
+
+                    <p class="empty-cart">
+                        Кошик поки що порожній
                     </p>
 
-                    <button
-                        id="resetEmpty"
-                        class="primary-btn"
-                    >
-                        Скинути фільтри
+                </div>
+
+                <div class="cart-footer">
+
+                    <div>
+
+                        <span>
+                            Разом:
+                        </span>
+
+                        <strong id="cartTotal">
+                            0 грн
+                        </strong>
+
+                    </div>
+
+                    <button class="primary-btn">
+                        Оформити замовлення
                     </button>
 
                 </div>
 
-
-            </section>
-
-        </div>
-
-    </div>
-
-</main>
-
-
-
-<!-- ==========================
-     КОШИК
-========================== -->
-
-<div
-    class="cart-modal"
-    id="cartModal"
->
-
-    <div class="cart-window">
-
-        <button
-            class="close-cart"
-            id="closeCart"
-        >
-            ×
-        </button>
-
-        <h2>
-            Ваш кошик
-        </h2>
-
-        <div id="cartItems">
-
-            <p class="empty-cart">
-                Кошик поки що порожній
-            </p>
-
-        </div>
-
-        <div class="cart-footer">
-
-            <div>
-
-                <span>
-                    Разом:
-                </span>
-
-                <strong id="cartTotal">
-                    0 грн
-                </strong>
-
             </div>
 
-            <button class="primary-btn">
-                Оформити замовлення
-            </button>
-
         </div>
 
-    </div>
-
-</div>
 
 
-
-<!-- ==========================
+        <!-- ==========================
      ОБРАНЕ
 ========================== -->
 
-<div
-    class="favorites-modal"
-    id="favoritesModal"
->
+        <div class="favorites-modal" id="favoritesModal">
 
-    <div class="favorites-window">
+            <div class="favorites-window">
 
-        <button
-            class="close-favorites"
-            id="closeFavorites"
-        >
-            ×
-        </button>
+                <button class="close-favorites" id="closeFavorites">
+                    ×
+                </button>
 
-        <h2>
-            ❤️ Обране
-        </h2>
+                <h2>
+                    ❤️ Обране
+                </h2>
 
-        <div
-            class="favorites-list"
-            id="favoritesList"
-        >
+                <div class="favorites-list" id="favoritesList">
 
-            <p class="empty-favorites">
-                У вас поки немає обраних товарів
-            </p>
+                    <p class="empty-favorites">
+                        У вас поки немає обраних товарів
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</div>
 
 
-
-<!-- ==========================
+        <!-- ==========================
      FOOTER
 ========================== -->
 
-<footer>
+        <footer>
 
-    <div class="container footer-grid">
+            <div class="container footer-grid">
 
-        <div>
+                <div>
 
-            <div class="footer-logo">
-                FOXTROT
+                    <div class="footer-logo">
+                        FOXTROT
+                    </div>
+
+                    <p>
+                        Техніка для сучасного життя
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Покупцям
+                    </h3>
+
+                    <a href="#">
+                        Доставка
+                    </a>
+
+                    <a href="#">
+                        Оплата
+                    </a>
+
+                    <a href="#">
+                        Гарантія
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Каталог
+                    </h3>
+
+                    <a href="#">
+                        Смартфони
+                    </a>
+
+                    <a href="#">
+                        Ноутбуки
+                    </a>
+
+                    <a href="#">
+                        Телевізори
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Ми на зв'язку
+                    </h3>
+
+                    <strong class="phone-number">
+                        0 800 300 353
+                    </strong>
+
+                    <p>
+                        Щодня: 08:00–22:00
+                    </p>
+
+                </div>
+
             </div>
 
-            <p>
-                Техніка для сучасного життя
-            </p>
 
-        </div>
+            <div class="copyright">
+                © 2026 Demo Shop. Навчальний макет.
+            </div>
 
-
-        <div>
-
-            <h3>
-                Покупцям
-            </h3>
-
-            <a href="#">
-                Доставка
-            </a>
-
-            <a href="#">
-                Оплата
-            </a>
-
-            <a href="#">
-                Гарантія
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Каталог
-            </h3>
-
-            <a href="#">
-                Смартфони
-            </a>
-
-            <a href="#">
-                Ноутбуки
-            </a>
-
-            <a href="#">
-                Телевізори
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Ми на зв'язку
-            </h3>
-
-            <strong class="phone-number">
-                0 800 300 353
-            </strong>
-
-            <p>
-                Щодня: 08:00–22:00
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="copyright">
-        © 2026 Demo Shop. Навчальний макет.
-    </div>
-
-</footer>
+        </footer>
 
 
 
-<!-- Спочатку каталог -->
+        <!-- Спочатку каталог -->
 
-<script src="catalog.js"></script>
+        <script src="catalog.js"></script>
 
-<!-- Потім логіка -->
+        <!-- Потім логіка -->
 
-<script src="catalog-page.js"></script>
+        <script src="catalog-page.js"></script>
 
 </body>
 
 </html>
-       
-

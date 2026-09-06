@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,402 +11,890 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
 
-    <div class="top-line">
-        <div class="container top-content">
-            <span>Доставка по Україні</span>
-            <div class="top-links">
-                <a href="#">Магазини</a>
-                <a href="#">Допомога</a>
-                <a href="#">Контакти</a>
+        <div class="top-line">
+            <div class="container top-content">
+                <span>Доставка по Україні</span>
+                <div class="top-links">
+                    <a href="#">Магазини</a>
+                    <a href="#">Допомога</a>
+                    <a href="#">Контакти</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="main-header container">
+        <div class="main-header container">
 
-        <a href="#" class="logo">
-            <span>FOXTROT</span>
-            <b>●</b>
-        </a>
+            <a href="#" class="logo">
+                <span>FOXTROT</span>
+                <b>●</b>
+            </a>
 
-        <a href="catalog.html" class="catalog-btn">
-             ☰
-            <span>Каталог</span>
-        </a>
-        <div class="search">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Я шукаю..."
-            >
-            <button id="searchBtn">⌕</button>
+            <a href="catalog.html" class="catalog-btn">
+                ☰
+                <span>Каталог</span>
+            </a>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Я шукаю...">
+                <button id="searchBtn">⌕</button>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="action" id="favoritesBtn">
+                    <span class="action-icon">♡</span>
+                    <span class="favorite-count" id="favoriteCount">0</span>
+                    <small>Обране</small>
+                </button>
+
+                <button class="action">
+                    <span class="action-icon">♙</span>
+                    <small>Увійти</small>
+                </button>
+
+                <button class="action cart" id="cartBtn">
+                    <span class="action-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                    <small>Кошик</small>
+                </button>
+
+            </div>
         </div>
 
-        <div class="header-actions">
-
-            <button class="action" id="favoritesBtn">
-                <span class="action-icon">♡</span>
-                <span class="favorite-count" id="favoriteCount">0</span>
-                <small>Обране</small>
-            </button>
-
-            <button class="action">
-                <span class="action-icon">♙</span>
-                <small>Увійти</small>
-            </button>
-
-            <button class="action cart" id="cartBtn">
-                <span class="action-icon">🛒</span>
-                <span class="cart-count" id="cartCount">0</span>
-                <small>Кошик</small>
-            </button>
-
-        </div>
-    </div>
-
-    
-
-</header>
 
 
-<main>
+    </header>
 
-    <!-- HERO -->
 
-    <section class="hero container">
+    <main>
 
-        <div class="hero-content">
+        <!-- HERO -->
 
-            <span class="hero-label">ВЕЛИКІ ЗНИЖКИ</span>
+        <section class="hero container">
 
-            <h1>
-                Техніка,<br>
-                яка робить<br>
-                життя простішим
-            </h1>
+            <div class="hero-content">
 
-            <p>
-                Обирай сучасну техніку за вигідними цінами
-            </p>
+                <span class="hero-label">ВЕЛИКІ ЗНИЖКИ</span>
 
-            <button class="primary-btn">
-                Дивитися товари
-            </button>
+                <h1>
+                    Техніка,<br>
+                    яка робить<br>
+                    життя простішим
+                </h1>
 
-        </div>
+                <p>
+                    Обирай сучасну техніку за вигідними цінами
+                </p>
 
-        <div class="hero-image">
-            <div class="circle"></div>
+                <button class="primary-btn">
+                    Дивитися товари
+                </button>
 
-            <div class="phone">
-                <div class="phone-screen">
-                    <span>50%</span>
-                    <small>SALE</small>
+            </div>
+
+            <div class="hero-image">
+                <div class="circle"></div>
+
+                <div class="phone">
+                    <div class="phone-screen">
+                        <span>50%</span>
+                        <small>SALE</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-one">
+                    📱
+                </div>
+
+                <div class="floating-card card-two">
+                    💻
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="benefits container">
+
+            <div class="benefit">
+                <div>🚚</div>
+                <div>
+                    <h3>Швидка доставка</h3>
+                    <p>Доставимо замовлення по Україні</p>
                 </div>
             </div>
 
-            <div class="floating-card card-one">
-                📱
+            <div class="benefit">
+                <div>🛡️</div>
+                <div>
+                    <h3>Гарантія якості</h3>
+                    <p>Тільки оригінальна продукція</p>
+                </div>
             </div>
 
-            <div class="floating-card card-two">
-                💻
+            <div class="benefit">
+                <div>💳</div>
+                <div>
+                    <h3>Зручна оплата</h3>
+                    <p>Готівка або картка</p>
+                </div>
             </div>
 
-        </div>
+            <div class="benefit">
+                <div>↩️</div>
+                <div>
+                    <h3>Легке повернення</h3>
+                    <p>14 днів на повернення</p>
+                </div>
+            </div>
 
-    </section>
+        </section>
 
-    <!-- PRODUCTS -->
-
-    <section class="products-section">
+    </main>
+    <div class="catalog-page">
 
         <div class="container">
 
-            <div class="section-header">
-                <h2>Популярні товари</h2>
-                <a href="#">Дивитися всі →</a>
+
+            <!-- ХЛІБНІ КРИХТИ -->
+
+            <div class="breadcrumbs">
+
+                <a href="index.html">
+                    Головна
+                </a>
+
+                <span>›</span>
+
+                <span>
+                    Каталог
+                </span>
+
             </div>
 
-            <div class="products" id="products">
 
-                <article
-                    class="product"
-                    data-name="Apple iPhone 15"
-                >
+            <div class="catalog-title">
 
-                    <button class="favorite">♡</button>
+                <div>
 
-                    <span class="discount">-15%</span>
+                    <h1>
+                        Каталог товарів
+                    </h1>
 
-                    <div class="product-image">
-                        📱
-                    </div>
+                    <p id="productsCount">
+                        60 товарів
+                    </p>
 
-                    <div class="rating">
-                        ★★★★★
-                        <span>(124)</span>
-                    </div>
+                </div>
 
-                    <h3>Apple iPhone 15 128GB</h3>
 
-                    <p class="old-price">39 999 грн</p>
+                <button class="mobile-filter-btn" id="mobileFilterBtn">
+                    ⚙ Фільтри
+                </button>
 
-                    <div class="product-bottom">
-                        <strong>33 999 грн</strong>
+            </div>
 
-                        <button
-                            class="buy-btn"
-                            data-product="Apple iPhone 15"
-                        >
-                            🛒
+
+
+            <div class="catalog-layout">
+
+
+                <!-- ==========================
+                 SIDEBAR
+            ========================== -->
+
+                <aside class="filters-sidebar" id="filtersSidebar">
+
+                    <div class="filter-header">
+
+                        <h2>
+                            Фільтри
+                        </h2>
+
+                        <button id="resetFilters" class="reset-filters">
+                            Скинути
                         </button>
+
                     </div>
 
-                </article>
+
+                    <!-- КАТЕГОРІЯ -->
+
+                    <div class="filter-section">
+
+                        <h3>
+                            Категорія
+                        </h3>
 
 
-                <article
-                    class="product"
-                    data-name="Samsung Galaxy S25"
-                >
+                        <label class="filter-option">
 
-                    <button class="favorite">♡</button>
+                            <input type="radio" name="category" value="all" checked>
 
-                    <span class="discount">-10%</span>
+                            <span>
+                                Усі товари
+                            </span>
 
-                    <div class="product-image">
-                        📱
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="category" value="Смартфони">
+
+                            <span>
+                                📱 Смартфони
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="category" value="Побутова техніка">
+
+                            <span>
+                                🏠 Побутова техніка
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="category" value="Комп'ютерна техніка">
+
+                            <span>
+                                🖥️ Комп'ютерна техніка
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="category" value="Ноутбуки">
+
+                            <span>
+                                💻 Ноутбуки
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="category" value="Телевізори">
+
+                            <span>
+                                📺 Телевізори
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="category" value="Ігрова техніка">
+
+                            <span>
+                                🎮 Ігрова техніка
+                            </span>
+
+                        </label>
+
+                    </div>
+<main class="catalog-page">
+
+            <div class="container">
+
+
+                <!-- ХЛІБНІ КРИХТИ -->
+
+                <div class="breadcrumbs">
+
+                    <a href="index.html">
+                        Головна
+                    </a>
+
+                    <span>›</span>
+
+                    <span>
+                        Каталог
+                    </span>
+
+                </div>
+
+
+                <div class="catalog-title">
+
+                    <div>
+
+                        <h1>
+                            Каталог товарів
+                        </h1>
+
+                        <p id="productsCount">
+                            60 товарів
+                        </p>
+
                     </div>
 
-                    <div class="rating">
-                        ★★★★★
-                        <span>(87)</span>
+
+                    <button class="mobile-filter-btn" id="mobileFilterBtn">
+                        ⚙ Фільтри
+                    </button>
+
+                </div>
+
+
+
+                <div class="catalog-layout">
+
+
+                    <!-- ==========================
+                 SIDEBAR
+            ========================== -->
+
+                    <aside class="filters-sidebar" id="filtersSidebar">
+
+                        <div class="filter-header">
+
+                            <h2>
+                                Фільтри
+                            </h2>
+
+                            <button  id="resetFilters" class="reset-filters">
+                                Скинути
+                            </button>
+
+                        </div>
+
+
+                        <!-- КАТЕГОРІЯ -->
+
+                        <div class="filter-section">
+
+                            <h3>
+                                Категорія
+                            </h3>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="all" checked>
+
+                                <span>
+                                    Усі товари
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="Смартфони">
+
+                                <span>
+                                    📱 Смартфони
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="Побутова техніка">
+
+                                <span>
+                                    🏠 Побутова техніка
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="Комп'ютерна техніка">
+
+                                <span>
+                                    🖥️ Комп'ютерна техніка
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="Ноутбуки">
+
+                                <span>
+                                    💻 Ноутбуки
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="Телевізори">
+
+                                <span>
+                                    📺 Телевізори
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="category" value="Ігрова техніка">
+
+                                <span>
+                                    🎮 Ігрова техніка
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+
+
+                        <!-- ШВИДКИЙ ДІАПАЗОН -->
+
+                        <div class="filter-section">
+
+                            <h3>
+                                Ціновий діапазон
+                            </h3>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="priceRange" value="all" checked>
+
+                                <span>
+                                    Будь-яка ціна
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="priceRange" value="0-5000">
+
+                                <span>
+                                    До 5 000 грн
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="priceRange" value="5000-15000">
+
+                                <span>
+                                    5 000–15 000 грн
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="priceRange" value="15000-30000">
+
+                                <span>
+                                    15 000–30 000 грн
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="priceRange" value="30000-50000">
+
+                                <span>
+                                    30 000–50 000 грн
+                                </span>
+
+                            </label>
+
+
+                            <label class="filter-option">
+
+                                <input type="radio" name="priceRange" value="50000-999999">
+
+                                <span>
+                                    Від 50 000 грн
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- ДОДАТКОВІ -->
+
+                        <div class="filter-section">
+
+                            <h3>
+                                Додатково
+                            </h3>
+
+
+                            <label class="checkbox-option">
+
+                                <input type="checkbox" id="discountFilter">
+
+                                <span>
+                                    Тільки зі знижкою
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                    </aside>
+
+
+
+                    <!-- ==========================
+                 PRODUCTS
+            ========================== -->
+
+                    <section class="catalog-content">
+
+
+                        <div class="catalog-toolbar">
+
+
+                            <span id="resultText">
+                                Знайдено товарів: 60
+                            </span>
+
+
+                            <select id="sortFilter" class="sort-select">
+
+                                <option value="default">
+                                    За популярністю
+                                </option>
+
+                                <option value="cheap">
+                                    Спочатку дешевші
+                                </option>
+
+                                <option value="expensive">
+                                    Спочатку дорожчі
+                                </option>
+
+                                <option value="name">
+                                    За назвою
+                                </option>
+
+                            </select>
+
+
+                        </div>
+
+
+                        <div class="catalog-products" id="catalogProducts"></div>
+
+
+                        <div class="no-products" id="noProducts">
+
+                            <div>
+                                🔍
+                            </div>
+
+                            <h2>
+                                Товарів не знайдено
+                            </h2>
+
+                            <p>
+                                Спробуйте змінити параметри фільтрів
+                            </p>
+
+                            <button id="resetEmpty" class="primary-btn">
+                                Скинути фільтри
+                            </button>
+
+                        </div>
+
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+                    <!-- ШВИДКИЙ ДІАПАЗОН -->
+
+                    <div class="filter-section">
+
+                        <h3>
+                            Ціновий діапазон
+                        </h3>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="priceRange" value="all" checked>
+
+                            <span>
+                                Будь-яка ціна
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="priceRange" value="0-5000">
+
+                            <span>
+                                До 5 000 грн
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="priceRange" value="5000-15000">
+
+                            <span>
+                                5 000–15 000 грн
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="priceRange" value="15000-30000">
+
+                            <span>
+                                15 000–30 000 грн
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="priceRange" value="30000-50000">
+
+                            <span>
+                                30 000–50 000 грн
+                            </span>
+
+                        </label>
+
+
+                        <label class="filter-option">
+
+                            <input type="radio" name="priceRange" value="50000-999999">
+
+                            <span>
+                                Від 50 000 грн
+                            </span>
+
+                        </label>
+
                     </div>
 
-                    <h3>Samsung Galaxy S25 256GB</h3>
 
-                    <p class="old-price">34 999 грн</p>
 
-                    <div class="product-bottom">
-                        <strong>31 499 грн</strong>
+                    <!-- ДОДАТКОВІ -->
 
-                        <button
-                            class="buy-btn"
-                            data-product="Samsung Galaxy S25"
-                        >
-                            🛒
+                    <div class="filter-section">
+
+                        <h3>
+                            Додатково
+                        </h3>
+
+
+                        <label class="checkbox-option">
+
+                            <input type="checkbox" id="discountFilter">
+
+                            <span>
+                                Тільки зі знижкою
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                </aside>
+
+
+
+                <!-- ==========================
+                 PRODUCTS
+            ========================== -->
+
+                <section class="catalog-content">
+
+
+                    <div class="catalog-toolbar">
+
+
+                        <span id="resultText">
+                            Знайдено товарів: 60
+                        </span>
+
+
+                        <select id="sortFilter" class="sort-select">
+
+                            <option value="default">
+                                За популярністю
+                            </option>
+
+                            <option value="cheap">
+                                Спочатку дешевші
+                            </option>
+
+                            <option value="expensive">
+                                Спочатку дорожчі
+                            </option>
+
+                            <option value="name">
+                                За назвою
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+
+                    <div class="catalog-products" id="catalogProducts"></div>
+
+
+                    <div class="no-products" id="noProducts">
+
+                        <div>
+                            🔍
+                        </div>
+
+                        <h2>
+                            Товарів не знайдено
+                        </h2>
+
+                        <p>
+                            Спробуйте змінити параметри фільтрів
+                        </p>
+
+                        <button id="resetEmpty" class="primary-btn">
+                            Скинути фільтри
                         </button>
+
                     </div>
 
-                </article>
 
-
-                <article
-                    class="product"
-                    data-name="MacBook Air M3"
-                >
-
-                    <button class="favorite">♡</button>
-
-                    <span class="discount">-12%</span>
-
-                    <div class="product-image">
-                        💻
-                    </div>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>(56)</span>
-                        
-                    </div>
-
-                    <h3>Apple MacBook Air 13 M3</h3>
-
-                    <p class="old-price">52 999 грн</p>
-
-                    <div class="product-bottom">
-                        <strong>46 499 грн</strong>
-
-                        <button
-                            class="buy-btn"
-                            data-product="MacBook Air M3"
-                        >
-                            🛒
-                        </button>
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="product"
-                    data-name="Sony PlayStation 5"
-                >
-
-                    <button class="favorite">♡</button>
-
-                    <span class="discount">-8%</span>
-
-                    <div class="product-image">
-                        🎮
-                    </div>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>(231)</span>
-                    </div>
-
-                    <h3>Sony PlayStation 5 Slim</h3>
-
-                    <p class="old-price">25 999 грн</p>
-
-                    <div class="product-bottom">
-                        <strong>23 999 грн</strong>
-
-                        <button
-                            class="buy-btn"
-                            data-product="PlayStation 5"
-                        >
-                            🛒
-                        </button>
-                    </div>
-
-                </article>
+                </section>
 
             </div>
 
         </div>
 
-    </section>
+    </main>
 
+    <!-- CART -->
 
-    <!-- BENEFITS -->
+    <div class="cart-modal" id="cartModal">
 
-    <section class="benefits container">
+        <div class="cart-window">
 
-        <div class="benefit">
-            <div>🚚</div>
-            <div>
-                <h3>Швидка доставка</h3>
-                <p>Доставимо замовлення по Україні</p>
-            </div>
-        </div>
+            <button class="close-cart" id="closeCart">×</button>
 
-        <div class="benefit">
-            <div>🛡️</div>
-            <div>
-                <h3>Гарантія якості</h3>
-                <p>Тільки оригінальна продукція</p>
-            </div>
-        </div>
+            <h2>Ваш кошик</h2>
 
-        <div class="benefit">
-            <div>💳</div>
-            <div>
-                <h3>Зручна оплата</h3>
-                <p>Готівка або картка</p>
-            </div>
-        </div>
-
-        <div class="benefit">
-            <div>↩️</div>
-            <div>
-                <h3>Легке повернення</h3>
-                <p>14 днів на повернення</p>
-            </div>
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- CART -->
-
-<div class="cart-modal" id="cartModal">
-
-    <div class="cart-window">
-
-        <button class="close-cart" id="closeCart">×</button>
-
-        <h2>Ваш кошик</h2>
-
-        <div id="cartItems">
-            <p class="empty-cart">
-                Кошик поки що порожній
-            </p>
-        </div>
-
-        <div class="cart-footer">
-
-            <div>
-                <span>Разом:</span>
-                <strong id="cartTotal">0 грн</strong>
+            <div id="cartItems">
+                <p class="empty-cart">
+                    Кошик поки що порожній
+                </p>
             </div>
 
-            <button class="primary-btn">
-                Оформити замовлення
-            </button>
+            <div class="cart-footer">
+
+                <div>
+                    <span>Разом:</span>
+                    <strong id="cartTotal">0 грн</strong>
+                </div>
+
+                <button class="primary-btn">
+                    Оформити замовлення
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
+    <footer>
 
-<footer>
+        <div class="container footer-grid">
 
-    <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">FOXTROT</div>
+                <p>Техніка для сучасного життя</p>
+            </div>
 
-        <div>
-            <div class="footer-logo">FOXTROT</div>
-            <p>Техніка для сучасного життя</p>
+            <div>
+                <h3>Покупцям</h3>
+                <a href="#">Доставка</a>
+                <a href="#">Оплата</a>
+                <a href="#">Гарантія</a>
+                <a href="#">Повернення</a>
+            </div>
+
+            <div>
+                <h3>Про магазин</h3>
+                <a href="#">Про нас</a>
+                <a href="#">Магазини</a>
+                <a href="#">Вакансії</a>
+                <a href="#">Контакти</a>
+            </div>
+
+            <div>
+                <h3>Ми на зв'язку</h3>
+                <strong class="phone-number">0 800 300 353</strong>
+                <p>Щодня: 08:00–22:00</p>
+            </div>
+
         </div>
 
-        <div>
-            <h3>Покупцям</h3>
-            <a href="#">Доставка</a>
-            <a href="#">Оплата</a>
-            <a href="#">Гарантія</a>
-            <a href="#">Повернення</a>
+        <div class="copyright">
+            © 2026 Demo Shop. Навчальний макет.
         </div>
 
-        <div>
-            <h3>Про магазин</h3>
-            <a href="#">Про нас</a>
-            <a href="#">Магазини</a>
-            <a href="#">Вакансії</a>
-            <a href="#">Контакти</a>
-        </div>
-
-        <div>
-            <h3>Ми на зв'язку</h3>
-            <strong class="phone-number">0 800 300 353</strong>
-            <p>Щодня: 08:00–22:00</p>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 Demo Shop. Навчальний макет.
-    </div>
-
-</footer>
+    </footer>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
