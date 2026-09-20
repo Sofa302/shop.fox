@@ -462,3 +462,44 @@ resetFilters.addEventListener("click", function () {
     document.getElementById("discountFilter").checked = false;
 
 });
+
+allFiltersDiv = document.querySelectorAll(".filter-section .filter-option");
+catalogProd= document.querySelector(".catalog-products")
+function Render(){
+    console.log(allFiltersDiv);
+
+    for (let x of catalog){
+        console.log(x);
+        
+
+        const element =
+            document.createElement("div");
+
+
+        element.className =
+            "product-card";
+
+
+        element.innerHTML = `
+
+            <div class="cart-item-info">
+            <img src="${x.photo}">
+                <strong>
+                    ${x.name}
+                </strong>
+
+                <span>
+                    ${x.category} ×
+                    ${x.price} грн
+                </span>
+
+            </div>
+        `;
+
+
+        catalogProd.appendChild(element);
+
+    }
+}
+
+Render()
