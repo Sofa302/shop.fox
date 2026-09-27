@@ -1,5 +1,6 @@
-/* /* =========================================================
-   FOXTROT — FULL RESPONSIVE CSS
+/* =========================================================
+   FOXTROT — INDEX.CSS
+   Підключати тільки в index.html
 ========================================================= */
 
 * {
@@ -77,11 +78,6 @@ img {
     border-bottom: 1px solid var(--border);
 }
 
-
-/* =========================================================
-   TOP LINE
-========================================================= */
-
 .top-line {
     background: #f3f3f3;
     color: #666;
@@ -110,11 +106,6 @@ img {
     color: var(--orange);
 }
 
-
-/* =========================================================
-   MAIN HEADER
-========================================================= */
-
 .main-header {
     min-height: 76px;
 
@@ -139,11 +130,6 @@ img {
 .logo b {
     font-size: 21px;
 }
-
-
-/* =========================================================
-   CATALOG BUTTON
-========================================================= */
 
 .catalog-btn {
     height: 44px;
@@ -170,11 +156,6 @@ img {
 .catalog-btn:hover {
     background: var(--orange-dark);
 }
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
 
 .search {
     height: 44px;
@@ -226,11 +207,6 @@ img {
 .search button:hover {
     background: var(--orange-dark);
 }
-
-
-/* =========================================================
-   HEADER ACTIONS
-========================================================= */
 
 .header-actions {
     display: flex;
@@ -294,41 +270,34 @@ img {
 
 
 /* =========================================================
-   NAVIGATION
+   BUTTONS
 ========================================================= */
 
-.navigation {
-    height: 46px;
+.primary-btn {
+    min-height: 42px;
 
-    display: flex;
+    padding: 0 22px;
+
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
 
-    gap: 28px;
+    background: var(--orange);
+    color: #fff;
 
-    overflow-x: auto;
-
-    white-space: nowrap;
+    border-radius: 6px;
 
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
 
-    scrollbar-width: none;
+    transition:
+        background .2s ease,
+        transform .2s ease;
 }
 
-.navigation::-webkit-scrollbar {
-    display: none;
-}
-
-.navigation a {
-    transition: color .2s ease;
-}
-
-.navigation a:hover {
-    color: var(--orange);
-}
-
-.sale-link {
-    color: var(--orange);
+.primary-btn:hover {
+    background: var(--orange-dark);
+    transform: translateY(-1px);
 }
 
 
@@ -395,33 +364,6 @@ img {
     color: #ccc;
 
     font-size: 15px;
-}
-
-.primary-btn {
-    min-height: 42px;
-
-    padding: 0 22px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--orange);
-    color: #fff;
-
-    border-radius: 6px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    transition:
-        background .2s ease,
-        transform .2s ease;
-}
-
-.primary-btn:hover {
-    background: var(--orange-dark);
-    transform: translateY(-1px);
 }
 
 
@@ -569,7 +511,7 @@ img {
 
 
 /* =========================================================
-   CATALOG
+   MINI-CATALOG (блок товарів на головній)
 ========================================================= */
 
 .catalog-page {
@@ -580,65 +522,6 @@ img {
 .catalog-page > .container {
     width: min(1240px, calc(100% - 32px));
 }
-
-
-/* =========================================================
-   BREADCRUMBS
-========================================================= */
-
-.breadcrumbs {
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-
-    margin-bottom: 18px;
-
-    color: #888;
-
-    font-size: 12px;
-}
-
-.breadcrumbs a {
-    color: #666;
-}
-
-.breadcrumbs a:hover {
-    color: var(--orange);
-}
-
-
-/* =========================================================
-   CATALOG TITLE
-========================================================= */
-
-.catalog-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-bottom: 20px;
-}
-
-.catalog-title h1 {
-    font-size: 30px;
-    line-height: 1.1;
-}
-
-#productsCount {
-    margin-top: 7px;
-
-    color: #888;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   CATALOG LAYOUT
-========================================================= */
 
 .catalog-layout {
     width: 100%;
@@ -658,165 +541,6 @@ img {
     width: 100%;
     min-width: 0;
 }
-
-
-/* =========================================================
-   FILTER SIDEBAR
-========================================================= */
-.filters-sidebar {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-
-    width: 280px;
-    height: calc(100vh - 40px);
-
-    padding: 18px;
-
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 100;
-}
-
-/* Контент з товарами */
-.products {
-    margin-left: 320px;
-    min-width: 0;
-}
-
-/* Мобільні */
-@media (max-width: 767px) {
-    .filters-sidebar {
-        position: static;
-
-        width: 100%;
-        height: auto;
-
-        margin-bottom: 20px;
-        padding: 14px;
-
-        overflow: visible;
-    }
-
-    .products {
-        margin-left: 0;
-    }
-}
-
-
-.filter-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 10px;
-
-    padding-bottom: 15px;
-
-    border-bottom: 1px solid #eee;
-}
-
-.filter-header h2 {
-    font-size: 18px;
-}
-
-.reset-filters {
-    background: transparent;
-
-    color: var(--orange);
-
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.reset-filters:hover {
-    text-decoration: underline;
-}
-
-.filter-section {
-    padding: 17px 0;
-
-    border-bottom: 1px solid #eee;
-}
-
-.filter-section:last-child {
-    padding-bottom: 3px;
-    border-bottom: 0;
-}
-
-.filter-section h3 {
-    margin-bottom: 12px;
-    font-size: 13px;
-}
-
-.filter-option,
-.checkbox-option {
-    min-height: 30px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 9px;
-
-    color: #555;
-
-    font-size: 12px;
-
-    cursor: pointer;
-}
-
-.filter-option:hover,
-.checkbox-option:hover {
-    color: var(--orange);
-}
-
-.filter-option input,
-.checkbox-option input {
-    width: 15px;
-    height: 15px;
-
-    accent-color: var(--orange);
-
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   MOBILE FILTER
-========================================================= */
-
-.mobile-filter-btn {
-    display: none;
-
-    min-height: 40px;
-
-    padding: 0 15px;
-
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 6px;
-
-    color: #333;
-
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.mobile-filter-btn:hover {
-    border-color: var(--orange);
-    color: var(--orange);
-}
-
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .catalog-toolbar {
     min-height: 48px;
@@ -867,18 +591,8 @@ img {
 
 /* =========================================================
    PRODUCTS GRID
+   Desktop -> 3, Tablet/Mobile -> 2, Tiny -> 1
 ========================================================= */
-
-/*
-   ГОЛОВНЕ:
-
-   Desktop  -> 3 картки
-   Tablet   -> 2 картки
-   Mobile   -> 2 картки
-   Tiny     -> 1 картка
-
-   Картки НЕ розтягуються по одній.
-*/
 
 .catalog-products {
     width: 100%;
@@ -892,6 +606,8 @@ img {
     gap: 14px;
 
     align-items: start;
+
+    z-index: 100;
 }
 
 
@@ -932,11 +648,6 @@ img {
     transform: translateY(-2px);
 }
 
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
 .product-image {
     width: 100%;
     height: 280px;
@@ -967,11 +678,6 @@ img {
 .product:hover .product-image img {
     transform: scale(1.03);
 }
-
-
-/* =========================================================
-   FAVORITE
-========================================================= */
 
 .product-favorite,
 .favorite {
@@ -1011,11 +717,6 @@ img {
     color: var(--orange);
 }
 
-
-/* =========================================================
-   DISCOUNT
-========================================================= */
-
 .discount {
     position: absolute;
 
@@ -1035,11 +736,6 @@ img {
     font-size: 10px;
     font-weight: 700;
 }
-
-
-/* =========================================================
-   PRODUCT INFO
-========================================================= */
 
 .product-category {
     margin-bottom: 6px;
@@ -1088,11 +784,6 @@ img {
 
     text-decoration: line-through;
 }
-
-
-/* =========================================================
-   PRODUCT BOTTOM
-========================================================= */
 
 .product-bottom,
 .product-price {
@@ -1180,11 +871,10 @@ img {
 
 
 /* =========================================================
-   CART / FAVORITES MODALS
+   CART MODAL
 ========================================================= */
 
-.cart-modal,
-.favorites-modal {
+.cart-modal {
     position: fixed;
 
     inset: 0;
@@ -1193,35 +883,19 @@ img {
 
     display: none;
 
+    justify-content: flex-end;
+
     background: rgba(0, 0, 0, .48);
 }
 
-.cart-modal.active,
-.favorites-modal.active {
+.cart-modal.active {
     display: flex;
 }
 
-.cart-modal {
-    justify-content: flex-end;
-}
-
-.favorites-modal {
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* =========================================================
-   MODAL WINDOWS
-========================================================= */
-
-.cart-window,
-.favorites-window {
+.cart-window {
     position: relative;
     background: #fff;
-}
 
-.cart-window {
     width: 430px;
     max-width: 100%;
 
@@ -1230,18 +904,6 @@ img {
     padding: 25px;
 
     animation: slideIn .2s ease;
-}
-
-.favorites-window {
-    width: min(650px, calc(100% - 30px));
-
-    max-height: 80vh;
-
-    padding: 25px;
-
-    border-radius: 10px;
-
-    overflow: auto;
 }
 
 @keyframes slideIn {
@@ -1256,14 +918,7 @@ img {
 
 }
 
-
-/* =========================================================
-   MODAL CLOSE
-========================================================= */
-
-.close-cart,
-.close-favorites,
-#closeFavorites {
+.close-cart {
     position: absolute;
 
     top: 15px;
@@ -1276,26 +931,17 @@ img {
     font-size: 26px;
 }
 
-.close-cart:hover,
-.close-favorites:hover,
-#closeFavorites:hover {
+.close-cart:hover {
     color: var(--orange);
 }
 
-.cart-window h2,
-.favorites-window h2 {
+.cart-window h2 {
     margin-bottom: 22px;
 
     font-size: 22px;
 }
 
-
-/* =========================================================
-   CART ITEMS
-========================================================= */
-
-.empty-cart,
-.empty-favorites {
+.empty-cart {
     padding: 45px 10px;
 
     color: #999;
@@ -1344,11 +990,6 @@ img {
 
     font-size: 12px;
 }
-
-
-/* =========================================================
-   CART FOOTER
-========================================================= */
 
 .cart-footer {
     position: absolute;
@@ -1473,10 +1114,6 @@ footer a:hover {
         gap: 10px;
     }
 
-    .navigation {
-        gap: 20px;
-    }
-
     .hero {
         padding: 45px;
     }
@@ -1485,10 +1122,6 @@ footer a:hover {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
-
-    /*
-       2 картки замість 3
-    */
 
     .catalog-products {
         grid-template-columns:
@@ -1556,14 +1189,6 @@ footer a:hover {
         height: 42px;
     }
 
-    .navigation {
-        height: 42px;
-
-        gap: 18px;
-
-        font-size: 12px;
-    }
-
 
     /* HERO */
 
@@ -1623,7 +1248,7 @@ footer a:hover {
     }
 
 
-    /* CATALOG */
+    /* MINI-CATALOG */
 
     .catalog-page {
         padding-top: 15px;
@@ -1632,51 +1257,6 @@ footer a:hover {
     .catalog-layout {
         display: block;
     }
-
-    .catalog-title {
-        align-items: flex-start;
-    }
-
-    .catalog-title h1 {
-        font-size: 25px;
-    }
-
-
-    /* FILTER */
-
-    .mobile-filter-btn {
-        display: block;
-    }
-
-    .filters-sidebar {
-        position: fixed;
-
-        top: 0;
-        left: 0;
-
-        z-index: 1100;
-
-        width: min(320px, 90%);
-
-        height: 100vh;
-
-        padding: 18px;
-
-        border-radius: 0;
-
-        overflow-y: auto;
-
-        transform: translateX(-100%);
-
-        transition: transform .25s ease;
-    }
-
-    .filters-sidebar.active {
-        transform: translateX(0);
-    }
-
-
-    /* TOOLBAR */
 
     .catalog-toolbar {
         flex-wrap: wrap;
@@ -1696,13 +1276,7 @@ footer a:hover {
         width: 100%;
     }
 
-
-    /* PRODUCTS */
-
     .catalog-products {
-        /*
-           2 картки в ряд
-        */
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
@@ -1849,32 +1423,9 @@ footer a:hover {
     }
 
 
-    /* CATALOG */
-
-    .catalog-title {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .catalog-title > div {
-        width: 100%;
-    }
-
-    .catalog-title h1 {
-        font-size: 23px;
-    }
-
-    .mobile-filter-btn {
-        width: 100%;
-    }
-
-
-    /* PRODUCTS */
+    /* PRODUCTS — 2 картки навіть на телефоні */
 
     .catalog-products {
-        /*
-           2 картки навіть на телефоні
-        */
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
@@ -1992,14 +1543,10 @@ footer a:hover {
 
 /* =========================================================
    VERY SMALL — до 350px
+   Одна картка, щоб назва/ціна/кнопка не ламались.
 ========================================================= */
 
 @media (max-width: 350px) {
-
-    /*
-       На дуже вузьких телефонах одна картка,
-       щоб назва/ціна/кнопка не ламались.
-    */
 
     .catalog-products {
         grid-template-columns: 1fr;
@@ -2019,7 +1566,3 @@ footer a:hover {
         font-size: 17px;
     }
 }
-
-.catalog-products{
-    z-index: 100;
-} 
