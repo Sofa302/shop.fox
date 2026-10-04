@@ -444,62 +444,264 @@ const catalog = [
     }
 ];
 
-const resetFilters = document.getElementById("resetFilters");
+/* =========================================================
+   HELPERS
+========================================================= */
 
-resetFilters.addEventListener("click", function () {
+const CART_ICON = `
+<svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="9" cy="20" r="1.5"></circle>
+    <circle cx="18" cy="20" r="1.5"></circle>
+    <path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H6"></path>
+</svg>`;
+
+const CHECK_ICON = `
+<svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 12.5l4.5 4.5L19 7.5"></path>
+</svg>`;
+
+// Запасна картинка, якщо фото не завантажилось
+const FALLBACK_IMG = "data:image/svg+xml," + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+        <rect width="100%" height="100%" fill="#f3f3f3"/>
+        <text x="50%" y="50%" fill="#aaa" font-family="Arial" font-size="28"
+              text-anchor="middle" dominant-baseline="middle">Немає фото</text>
+    </svg>`
+);
+
+const formatPrice = n => n.toLocaleString("uk-UA") + " грн";
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+
+/* =========================================================
+   RENDER КАТАЛОГУ
+========================================================= */
+
+const catalogProducts = document.getElementById("catalogProducts");
+
+function Render() {
+
+    catalogProducts.innerHTML = catalog.map((x, id) => `
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img src="${x.photo}"
+                     alt="${escapeHtml(x.name)}"
+                     loading="lazy"
+                     onerror="this.onerror=null; this.src=FALLBACK_IMG;">
+            </div>
+
+            <div class="product-category">${escapeHtml(x.category)}</div>
+
+            <h3>${escapeHtml(x.name)}</h3>
+
+            <div class="product-bottom">
+                <strong>${formatPrice(x.price)}</strong>
+
+                <button class="buy-btn"
+                        data-id="${id}"
+                        title="Додати в кошик"
+                        aria-label="Додати в кошик: ${escapeHtml(x.name)}">
+                    ${CART_ICON}
+                </button>
+            </div>
+
+        </div>
+    `).join("");
+
+    document.getElementById("productsCount").textContent = catalog.length + " товарів";
+    document.getElementById("resultText").textContent = "Знайдено товарів: " + catalog.length;
+}
+
+
+/* =========================================================
+   КОШИК
+========================================================= */
+
+const cartModal = document.getElementById("cartModal");
+const cartItemsBox = document.getElementById("cartItems");
+const cartCount = document.getElementById("cartCount");
+const cartTotal = document.getElementById("cartTotal");
+
+// [{ id: індекс товару в catalog, qty: кількість }]
+let cart = [];
+
+try {
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter(item => catalog[item.id]);
+} catch (e) {
+    cart = [];
+}
+
+function saveCart() {
+    try {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    } catch (e) { /* ігноруємо */ }
+}
+
+function addToCart(id) {
+    const found = cart.find(item => item.id === id);
+
+    if (found) {
+        found.qty++;
+    } else {
+        cart.push({ id: id, qty: 1 });
+    }
+
+    renderCart();
+}
+
+function changeQty(id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
+
+    item.qty += delta;
+
+    if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+    }
+
+    renderCart();
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    renderCart();
+}
+
+function renderCart() {
+
+    const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+    const totalPrice = cart.reduce((sum, i) => sum + catalog[i.id].price * i.qty, 0);
+
+    cartCount.textContent = totalQty;
+    cartCount.style.display = totalQty ? "flex" : "none";
+    cartTotal.textContent = formatPrice(totalPrice);
+
+    if (!cart.length) {
+        cartItemsBox.innerHTML =
+            '<p class="empty-cart">Кошик поки що порожній</p>';
+    } else {
+        cartItemsBox.innerHTML = cart.map(i => {
+            const p = catalog[i.id];
+
+            return `
+            <div class="cart-item">
+
+                <img src="${p.photo}" alt=""
+                     onerror="this.onerror=null; this.src=FALLBACK_IMG;">
+
+                <div class="cart-item-info">
+                    <strong>${escapeHtml(p.name)}</strong>
+                    <span>${formatPrice(p.price * i.qty)}</span>
+                </div>
+
+                <div class="cart-item-side">
+                    <div class="qty">
+                        <button class="qty-btn" data-action="minus" data-id="${i.id}" aria-label="Менше">−</button>
+                        <span class="qty-value">${i.qty}</span>
+                        <button class="qty-btn" data-action="plus" data-id="${i.id}" aria-label="Більше">+</button>
+                    </div>
+
+                    <button class="remove-item" data-action="remove" data-id="${i.id}">
+                        Видалити
+                    </button>
+                </div>
+
+            </div>`;
+        }).join("");
+    }
+
+    saveCart();
+}
+
+// Клік по іконці кошика на картці товару
+catalogProducts.addEventListener("click", function (e) {
+    const btn = e.target.closest(".buy-btn");
+    if (!btn) return;
+
+    addToCart(Number(btn.dataset.id));
+
+    // Візуальний відгук: галочка на 0.9с + "підстрибування" лічильника
+    btn.classList.add("added");
+    btn.innerHTML = CHECK_ICON;
+
+    setTimeout(() => {
+        btn.classList.remove("added");
+        btn.innerHTML = CART_ICON;
+    }, 900);
+
+    cartCount.classList.add("bump");
+    setTimeout(() => cartCount.classList.remove("bump"), 200);
+});
+
+// Кнопки +/−/видалити в кошику
+cartItemsBox.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-action]");
+    if (!btn) return;
+
+    const id = Number(btn.dataset.id);
+
+    if (btn.dataset.action === "plus") changeQty(id, 1);
+    if (btn.dataset.action === "minus") changeQty(id, -1);
+    if (btn.dataset.action === "remove") removeFromCart(id);
+});
+
+// Відкрити / закрити кошик
+document.getElementById("cartBtn").addEventListener("click", () => cartModal.classList.add("active"));
+document.getElementById("closeCart").addEventListener("click", () => cartModal.classList.remove("active"));
+
+cartModal.addEventListener("click", function (e) {
+    if (e.target === cartModal) cartModal.classList.remove("active");
+});
+
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") cartModal.classList.remove("active");
+});
+
+
+/* =========================================================
+   ФІЛЬТРИ
+========================================================= */
+
+const filtersSidebar = document.getElementById("filtersSidebar");
+
+document.getElementById("resetFilters").addEventListener("click", function () {
 
     // Категорія → Усі товари
-    document.querySelector(
-        'input[name="category"][value="all"]'
-    ).checked = true;
+    document.querySelector('input[name="category"][value="all"]').checked = true;
 
     // Ціна → Будь-яка ціна
-    document.querySelector(
-        'input[name="priceRange"][value="all"]'
-    ).checked = true;
+    document.querySelector('input[name="priceRange"][value="all"]').checked = true;
 
     // Додаткові → зняти галочку
     document.getElementById("discountFilter").checked = false;
-
 });
 
-allFiltersDiv = document.querySelectorAll(".filter-section .filter-option");
-catalogProd= document.querySelector(".catalog-products")
-function Render(){
-    console.log(allFiltersDiv);
+// Мобільна панель фільтрів
+document.getElementById("mobileFilterBtn").addEventListener("click", function (e) {
+    e.stopPropagation();
+    filtersSidebar.classList.toggle("active");
+});
 
-    for (let x of catalog){
-        console.log(x);
-        
-
-        const element =
-            document.createElement("div");
-
-
-        element.className =
-            "product-card";
-
-
-        element.innerHTML = `
-
-            <div class="cart-item-info">
-            <img src="${x.photo}">
-                <strong>
-                    ${x.name}
-                </strong>
-
-                <span>
-                    ${x.category} ×
-                    ${x.price} грн
-                </span>
-
-            </div>
-        `;
-
-
-        catalogProd.appendChild(element);
-
+document.addEventListener("click", function (e) {
+    if (!filtersSidebar.contains(e.target)) {
+        filtersSidebar.classList.remove("active");
     }
-}
+});
 
-Render()
+
+/* =========================================================
+   СТАРТ
+========================================================= */
+
+Render();
+renderCart();
