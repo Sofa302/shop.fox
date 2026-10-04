@@ -8,105 +8,105 @@ const catalog = [
         category: "Смартфони",
         name: "Apple iPhone 15 128GB",
         price: 33999,
-        photo: "https://images.unsplash.com/photo-1696446702183-cbd1c5e2a5d4?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kMSPRPZ--Po70bLwHwjN0kvmblPrbK2RY7C3gnbqMg&s"
     },
 
     {
         category: "Смартфони",
         name: "Apple iPhone 15 Pro 256GB",
         price: 45999,
-        photo: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyeuSi6jMLBSsEixOCQMoCJovCnLQoN5D0h1xYI8Mb9g&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Apple iPhone 16 128GB",
         price: 39999,
-        photo: "https://images.unsplash.com/photo-1722310870062-3a0e9e1e4e9b?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0dC8d1sVeNzVLnL-8f7oTQ_PjSwguV72kpCTSt9z91w&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Samsung Galaxy S25 256GB",
         price: 31499,
-        photo: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdvXhB-QarcsMyfwn10MtRp7FcZc4Im_GeIFlJQ-l85Q&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Samsung Galaxy S25 Ultra",
         price: 52999,
-        photo: "https://images.unsplash.com/photo-1610792516307-ea5acd9c3b11?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy2aoWqEDAQi6LGr9Nb4NdDXmVgA0-vrZlNLaimv_Svw&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Samsung Galaxy A56 256GB",
         price: 18999,
-        photo: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIzjGqMNADpBvvch318Cpue13E9GNyCfU1MnFVzgdyxQ&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Xiaomi Redmi Note 14 Pro",
         price: 12999,
-        photo: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4C4xeVuxusup9flG4Vm0TvfF12-vUXK9XDIBhbb4d0A&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Xiaomi 15 512GB",
         price: 26999,
-        photo: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCetA2IKmZkSqnNuPUqJoOAEVNQJCZal2BXM0eJm_JvQ&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Google Pixel 9",
         price: 29999,
-        photo: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsKMmQSR1rm5Db4FnHeNOOpgFgaGWOmsjPBKEbnbBdCg&s=10"
     },
 
     {
         category: "Смартфони",
         name: "OnePlus 13 256GB",
         price: 27999,
-        photo: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSch0xVYDFE6Am-JAUAoVYrTt20KAlVPckSMpQ2iTCpZA&s"
     },
 
     {
         category: "Смартфони",
         name: "Motorola Edge 50 Pro",
         price: 21999,
-        photo: "https://images.unsplash.com/photo-1533228100845-08145b01de14?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmHKjm7fjdVUHjdZCiqYweQGXwFhOlMFALDCQVTFDkPg&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Honor 400 Pro",
         price: 23999,
-        photo: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVvW-Bt_Hpteb9nxL6H_Y2ENh4cJzw5bnBNV7ISIvikg&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Realme GT 7",
         price: 19999,
-        photo: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9G5tAlFetutOr7eh_T3pvatgJTHzeqIAaSpFFxog90Q&s"
     },
 
     {
         category: "Смартфони",
         name: "Nothing Phone 3",
         price: 24999,
-        photo: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZZvxZ2i4fDrhRgoMm2HHyAc3RL_7KwytUdidfTSh6vA&s=10"
     },
 
     {
         category: "Смартфони",
         name: "Sony Xperia 1 VI",
         price: 42999,
-        photo: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHD86CqdNVxY7gXiNYNNcAo0dQoWogzmKKi6VWVK2Fjw&s=10"
     },
 
 
@@ -118,105 +118,105 @@ const catalog = [
         category: "Побутова техніка",
         name: "Аерогриль Philips Essential",
         price: 4999,
-        photo: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjxPnrz0BduMx4dQ39Ni0LWfMd1FZHgWsfwFDfovxCsg&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Аерогриль Tefal Easy Fry",
         price: 4299,
-        photo: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn4Ecbgf9bkK6FDxBhm2qBlGhNFQENxOG_SdXsAQ0fBg&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Робот-пилосос Xiaomi Robot Vacuum",
         price: 8999,
-        photo: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2oy5OEp543v2hL4LS4GF7NolYHo3UJV8GUqhyJrSSg&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Пилосос Samsung Jet",
         price: 12999,
-        photo: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpnXSSVePxj2fZWWAEJpMsvOOLNuM1FIyYKpuJj8WyQ&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Кавомашина DeLonghi Magnifica",
         price: 18999,
-        photo: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM7PIZnDV2MQkV61oDwPvC0Abqfg0xYiffLB9qgzmQvw&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Кавоварка Philips LatteGo",
         price: 15999,
-        photo: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW8xvlh4G9uUhKe5eFcSODvWX4kkf9sntoSdPPuYtJWQ&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Мікрохвильова піч Samsung",
         price: 5999,
-        photo: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6IUf6HPX5e2HfbiMiU_icDvsq8sUel6GqBjwVFlPQdg&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Електрочайник Philips",
         price: 1499,
-        photo: "https://images.unsplash.com/photo-1594213114663-d94db9b171b9?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnuyQuMIq8xFFAC2b7sAbPjf6rmCb2PqMbLcIWfCGowA&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Блендер Bosch ErgoMixx",
         price: 2499,
-        photo: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQwGmmmADyeTPmdX7Rc_EwV7duMQCvpgeEkF5WjlHMyw&s"
     },
 
     {
         category: "Побутова техніка",
         name: "Мультиварка Moulinex",
         price: 3299,
-        photo: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqtrmBdeO0m97zZ1Qo3ZpItqHhFunKmAf2DDryv7s-nw&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Тостер Philips",
         price: 1799,
-        photo: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0EwThN7gPWhytZixMUl8e9yRrukn93wYMgQTkqy5zkw&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Міксер Bosch MFQ",
         price: 1999,
-        photo: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH92KnNih4c9ekVO4KFzGUuSYfrWNbn9HKr57IKjRinw&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Праска Philips Azur",
         price: 2899,
-        photo: "https://images.unsplash.com/photo-1587142138527-3b2a2c6fcb8a?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHmT7ClP7aRTF-O8hv1NPP1oTvlzoph_TawHT1aigdLA&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Гриль Tefal OptiGrill",
         price: 6999,
-        photo: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdz6HbRSf7mvumBgsn5_EDuDIo5njaIpBzrfwdJ5Kj8A&s=10"
     },
 
     {
         category: "Побутова техніка",
         name: "Фритюрниця Philips Airfryer",
         price: 5499,
-        photo: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600"
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFtZkHzeL5bOo8cmPJs3abCmLJGI-rLb16t7qLNYkRMQ&s=10"
     },
 
     {
