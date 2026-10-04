@@ -1531,3 +1531,110 @@ footer a:hover {
         font-size: 17px;
     }
 }
+
+/* ========================================
+   АДАПТИВНЕ ФОТО ТОВАРУ
+======================================== */
+
+.product-card img {
+    width: 100%;
+
+    /*
+       Висота залежить від ширини картки.
+       clamp:
+       180px — мінімум
+       22vw  — адаптивний розмір
+       330px — максимум
+    */
+    height: clamp(180px, 22vw, 330px);
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    background: #f7f7f7;
+
+    border-radius: 16px;
+
+    padding: clamp(8px, 1.2vw, 16px);
+
+    box-sizing: border-box;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* ========================================
+   ВЕЛИКИЙ ЕКРАН
+======================================== */
+
+@media (min-width: 1400px) {
+
+    .product-card img {
+        height: clamp(280px, 20vw, 360px);
+    }
+
+}
+
+
+/* ========================================
+   НОУТБУК
+======================================== */
+
+@media (min-width: 1100px) and (max-width: 1399px) {
+
+    .product-card img {
+        height: clamp(240px, 22vw, 310px);
+    }
+
+}
+
+
+/* ========================================
+   ПЛАНШЕТ
+======================================== */
+
+@media (min-width: 751px) and (max-width: 1099px) {
+
+    .product-card img {
+        height: clamp(220px, 28vw, 290px);
+    }
+
+}
+
+
+/* ========================================
+   ТЕЛЕФОН
+======================================== */
+
+@media (max-width: 750px) {
+
+    .product-card img {
+        height: clamp(180px, 42vw, 260px);
+
+        border-radius: 14px;
+    }
+
+}
+
+
+/* ========================================
+   МАЛЕНЬКИЙ ТЕЛЕФОН
+======================================== */
+
+@media (max-width: 420px) {
+
+    .product-card img {
+        height: clamp(200px, 60vw, 260px);
+    }
+
+}
+
