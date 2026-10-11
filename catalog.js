@@ -501,6 +501,7 @@ function Render(products) {
     products.forEach(product => {
         container.innerHTML += `
             <div class="product-card">
+                
                 <img src="${product.photo}" alt="${product.name}">
 
                 <h3>${product.name}</h3>

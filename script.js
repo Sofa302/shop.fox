@@ -1,4 +1,4 @@
-const catalog = [
+const catalog2 = [
     {
         id: 1,
         name: "Apple iPhone 15 128GB",
@@ -105,7 +105,7 @@ const catalog = [
    ДОПОМІЖНІ ФУНКЦІЇ
 ========================================================= */
 
-function formatPrice(price) {
+function formatPrice2(price) {
     return Number(price).toLocaleString("uk-UA");
 }
 
@@ -114,40 +114,40 @@ function formatPrice(price) {
    КОШИК
 ========================================================= */
 
-let cart = JSON.parse(
-    localStorage.getItem("cart") || "[]"
+let cart2 = JSON.parse(
+    localStorage.getItem("cart2") || "[]"
 );
 
 const cartBtn = document.getElementById("cartBtn");
-const cartModal = document.getElementById("cartModal");
+const cartModal2 = document.getElementById("cartModal2");
 const closeCart = document.getElementById("closeCart");
 
-const cartCount = document.getElementById("cartCount");
+const cartCount2 = document.getElementById("cartCount2");
 const cartItems = document.getElementById("cartItems");
-const cartTotal = document.getElementById("cartTotal");
+const cartTotal2 = document.getElementById("cartTotal2");
 
 
 function saveCart() {
     localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
+        "cart2",
+        JSON.stringify(cart2)
     );
 }
 
 
 function openCart() {
 
-    if (!cartModal) return;
+    if (!cartModal2) return;
 
-    cartModal.classList.add("active");
+    cartModal2.classList.add("active");
 }
 
 
 function closeCartWindow() {
 
-    if (!cartModal) return;
+    if (!cartModal2) return;
 
-    cartModal.classList.remove("active");
+    cartModal2.classList.remove("active");
 }
 
 
@@ -164,11 +164,11 @@ if (closeCart) {
 }
 
 
-if (cartModal) {
+if (cartModal2) {
 
-    cartModal.addEventListener("click", event => {
+    cartModal2.addEventListener("click", event => {
 
-        if (event.target === cartModal) {
+        if (event.target === cartModal2) {
             closeCartWindow();
         }
 
@@ -181,14 +181,14 @@ if (cartModal) {
 
 function addToCart(productId) {
 
-    const product = catalog.find(
+    const product = catalog2.find(
         item => item.id === productId
     );
 
     if (!product) return;
 
 
-    const existingProduct = cart.find(
+    const existingProduct = cart2.find(
         item => item.id === productId
     );
 
@@ -199,7 +199,7 @@ function addToCart(productId) {
 
     } else {
 
-        cart.push({
+        cart2.push({
             ...product,
             quantity: 1
         });
@@ -219,7 +219,7 @@ function addToCart(productId) {
 
 function removeFromCart(productId) {
 
-    cart = cart.filter(
+    cart2 = cart2.filter(
         item => item.id !== productId
     );
 
@@ -233,7 +233,7 @@ function removeFromCart(productId) {
 
 function changeQuantity(productId, change) {
 
-    const product = cart.find(
+    const product = cart2.find(
         item => item.id === productId
     );
 
@@ -245,7 +245,7 @@ function changeQuantity(productId, change) {
 
     if (product.quantity <= 0) {
 
-        cart = cart.filter(
+        cart2 = cart2.filter(
             item => item.id !== productId
         );
 
@@ -262,32 +262,32 @@ function changeQuantity(productId, change) {
 
 function updateCart() {
 
-    if (!cartCount) return;
+    if (!cartCount2) return;
 
 
-    const totalItems = cart.reduce(
+    const totalItems = cart2.reduce(
         (sum, item) =>
             sum + item.quantity,
         0
     );
 
 
-    cartCount.textContent = totalItems;
+    cartCount2.textContent = totalItems;
 
 
     if (!cartItems) return;
 
 
-    if (cart.length === 0) {
+    if (cart2.length === 0) {
 
         cartItems.innerHTML = `
-            <p class="empty-cart">
+            <p class="empty-cart2">
                 Кошик поки що порожній
             </p>
         `;
 
-        if (cartTotal) {
-            cartTotal.textContent = "0 грн";
+        if (cartTotal2) {
+            cartTotal2.textContent = "0 грн";
         }
 
         return;
@@ -300,7 +300,7 @@ function updateCart() {
     let total = 0;
 
 
-    cart.forEach(item => {
+    cart2.forEach(item => {
 
         total +=
             item.price *
@@ -325,7 +325,7 @@ function updateCart() {
 
                 <span>
                     ${item.quantity} ×
-                    ${formatPrice(item.price)} грн
+                    ${formatPrice2(item.price)} грн
                 </span>
 
             </div>
@@ -370,10 +370,10 @@ function updateCart() {
     });
 
 
-    if (cartTotal) {
+    if (cartTotal2) {
 
-        cartTotal.textContent =
-            `${formatPrice(total)} грн`;
+        cartTotal2.textContent =
+            `${formatPrice2(total)} грн`;
 
     }
 }
@@ -498,7 +498,7 @@ if (favoritesBtn) {
 
 
             const favoriteProducts =
-                catalog.filter(product =>
+                catalog2.filter(product =>
                     favorites.includes(
                         product.id
                     )
@@ -515,7 +515,7 @@ if (favoritesBtn) {
                     text +=
                         `${index + 1}. ` +
                         `${product.name} — ` +
-                        `${formatPrice(product.price)} грн\n`;
+                        `${formatPrice2(product.price)} грн\n`;
 
                 }
             );
@@ -600,7 +600,7 @@ function renderProducts(products) {
             product.oldPrice
                 ? `
                     <div class="old-price">
-                        ${formatPrice(product.oldPrice)} грн
+                        ${formatPrice2(product.oldPrice)} грн
                     </div>
                   `
                 : "";
@@ -673,7 +673,7 @@ function renderProducts(products) {
                     ${oldPriceHTML}
 
                     <strong>
-                        ${formatPrice(product.price)} грн
+                        ${formatPrice2(product.price)} грн
                     </strong>
 
                 </div>
@@ -757,7 +757,7 @@ const searchBtn =
 
 function getCurrentProducts() {
 
-    let result = [...catalog];
+    let result = [...catalog2];
 
 
     /* ПОШУК */
