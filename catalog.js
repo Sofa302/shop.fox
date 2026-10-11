@@ -485,11 +485,24 @@ function escapeHtml(str) {
 ========================================================= */
 
 const catalogProducts = document.getElementById("catalogProducts");
+
+// Українська форма слова: 1 товар, 2-4 товари, 5+ товарів
+function pluralProducts(n) {
+    const mod10 = n % 10, mod100 = n % 100;
+    if (mod10 === 1 && mod100 !== 11) return "товар";
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return "товари";
+    return "товарів";
+}
+
 function Render(products) {
     const container = document.getElementById("catalogProducts");
     const noProducts = document.getElementById("noProducts");
 
     container.innerHTML = "";
+
+    // Лічильники кількості товарів (оновлюються і для 0 результатів)
+    document.getElementById("productsCount").textContent = products.length + " " + pluralProducts(products.length);
+    document.getElementById("resultText").textContent = "Знайдено товарів: " + products.length;
 
     if (products.length === 0) {
         noProducts.style.display = "block";
@@ -829,6 +842,10 @@ document.getElementById("resetFilters").addEventListener("click", function () {
     // Додаткові → зняти галочку
     document.getElementById("discountFilter").checked = false;
 
+    // Сортування і пошук
+    document.getElementById("sortFilter").value = "default";
+    document.getElementById("searchInput").value = "";
+
     filterProducts()
 });
 
@@ -848,6 +865,15 @@ document.querySelectorAll(
     'input[name="category"], input[name="priceRange"], #discountFilter'
 ).forEach(input => {
     input.addEventListener("change", filterProducts);
+});
+
+// Сортування і пошук
+document.getElementById("sortFilter").addEventListener("change", filterProducts);
+document.getElementById("searchInput").addEventListener("input", filterProducts);
+document.getElementById("searchBtn").addEventListener("click", filterProducts);
+
+document.getElementById("resetEmpty").addEventListener("click", function () {
+    document.getElementById("resetFilters").click();
 });
 
 // Показуємо всі товари під час відкриття каталогу
@@ -893,8 +919,22 @@ function filterProducts() {
         return categoryMatch && priceMatch && discountMatch;
     });
 
+    // Пошук за назвою
+    const query = document.getElementById("searchInput").value.trim().toLowerCase();
+
+    let result = filteredProducts.filter(product =>
+        !query || product.name.toLowerCase().includes(query)
+    );
+
+    // Сортування
+    const sort = document.getElementById("sortFilter").value;
+
+    if (sort === "cheap")     result.sort((a, b) => a.price - b.price);
+    if (sort === "expensive") result.sort((a, b) => b.price - a.price);
+    if (sort === "name")      result.sort((a, b) => a.name.localeCompare(b.name, "uk"));
+
     // Виводимо відфільтровані товари
-    Render(filteredProducts);
+    Render(result);
 }
 
 /* =========================================================
