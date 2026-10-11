@@ -485,40 +485,40 @@ function escapeHtml(str) {
 ========================================================= */
 
 const catalogProducts = document.getElementById("catalogProducts");
+function Render(products) {
+    const container = document.getElementById("catalogProducts");
+    const noProducts = document.getElementById("noProducts");
 
-function Render() {
+    container.innerHTML = "";
 
-    catalogProducts.innerHTML = catalog.map((x, id) => `
+    if (products.length === 0) {
+        noProducts.style.display = "block";
+        return;
+    }
 
-        <div class="product-card">
+    noProducts.style.display = "none";
 
-            <div class="product-image">
-                <img src="${x.photo}"
-                     alt="${escapeHtml(x.name)}"
-                     loading="lazy"
-                     onerror="this.onerror=null; this.src=FALLBACK_IMG;">
+    products.forEach(product => {
+        container.innerHTML += `
+            <div class="product-card">
+                <img src="${product.photo}" alt="${product.name}">
+
+                <h3>${product.name}</h3>
+
+                <p class="product-price">
+                    ${product.price.toLocaleString("uk-UA")} грн
+                </p>
+
+                ${
+                    product.oldPrice
+                        ? `<p class="old-price">
+                            ${product.oldPrice.toLocaleString("uk-UA")} грн
+                           </p>`
+                        : ""
+                }
             </div>
-
-            <div class="product-category">${escapeHtml(x.category)}</div>
-
-            <h3>${escapeHtml(x.name)}</h3>
-
-            <div class="product-bottom">
-                <strong>${formatPrice(x.price)}</strong>
-
-                <button class="buy-btn"
-                        data-id="${id}"
-                        title="Додати в кошик"
-                        aria-label="Додати в кошик: ${escapeHtml(x.name)}">
-                    ${CART_ICON}
-                </button>
-            </div>
-
-        </div>
-    `).join("");
-
-    document.getElementById("productsCount").textContent = catalog.length + " товарів";
-    document.getElementById("resultText").textContent = "Знайдено товарів: " + catalog.length;
+        `;
+    });
 }
 
 
@@ -684,6 +684,8 @@ document.getElementById("resetFilters").addEventListener("click", function () {
 
     // Додаткові → зняти галочку
     document.getElementById("discountFilter").checked = false;
+
+    filterProducts()
 });
 
 // Мобільна панель фільтрів
@@ -698,10 +700,62 @@ document.addEventListener("click", function (e) {
     }
 });
 
+document.querySelectorAll(
+    'input[name="category"], input[name="priceRange"], #discountFilter'
+).forEach(input => {
+    input.addEventListener("change", filterProducts);
+});
+
+// Показуємо всі товари під час відкриття каталогу
+document.addEventListener("DOMContentLoaded", filterProducts);
+function filterProducts() {
+    // Отримуємо вибрану категорію
+    const selectedCategory = document.querySelector(
+        'input[name="category"]:checked'
+    ).value;
+
+    // Отримуємо вибрану ціну
+    const selectedPrice = document.querySelector(
+        'input[name="priceRange"]:checked'
+    ).value;
+
+    // Перевіряємо, чи увімкнена знижка
+    const onlyDiscount = document.getElementById("discountFilter").checked;
+
+    // Фільтруємо товари
+    const filteredProducts = catalog.filter(product => {
+        // Фільтр категорії
+        const categoryMatch =
+            selectedCategory === "all" ||
+            product.category === selectedCategory;
+
+        // Фільтр ціни
+        let priceMatch = true;
+
+        if (selectedPrice !== "all") {
+            const [minPrice, maxPrice] = selectedPrice.split("-").map(Number);
+
+            priceMatch =
+                product.price >= minPrice &&
+                product.price <= maxPrice;
+        }
+
+        // Фільтр знижки
+        const discountMatch =
+            !onlyDiscount ||
+            (product.oldPrice && product.oldPrice > product.price);
+
+        // Товар має відповідати всім вибраним фільтрам
+        return categoryMatch && priceMatch && discountMatch;
+    });
+
+    // Виводимо відфільтровані товари
+    Render(filteredProducts);
+}
 
 /* =========================================================
    СТАРТ
 ========================================================= */
 
-Render();
+Render(catalog);
 renderCart();
