@@ -499,8 +499,15 @@ function Render(products) {
     noProducts.style.display = "none";
 
     products.forEach(product => {
+        const id = catalog.indexOf(product);   // індекс товару в catalog
+        const isFav = favorites.includes(id);
         container.innerHTML += `
             <div class="product-card">
+                <button class="product-favorite ${isFav ? "active" : ""}"
+                        data-fav-id="${id}"
+                        aria-pressed="${isFav}"
+                        title="${isFav ? "Прибрати з обраного" : "Додати в обране"}"
+                        aria-label="Обране: ${escapeHtml(product.name)}">${isFav ? "♥" : "♡"}</button>
                 
                 <img src="${product.photo}" alt="${product.name}">
 
@@ -667,6 +674,142 @@ cartModal.addEventListener("click", function (e) {
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") cartModal.classList.remove("active");
 });
+
+
+/* =========================================================
+   ОБРАНЕ
+========================================================= */
+
+const favoritesModal = document.getElementById("favoritesModal");
+const favoritesList  = document.getElementById("favoritesList");
+const favoriteCount  = document.getElementById("favoriteCount");
+
+// [індекс товару в catalog, ...]
+let favorites = [];
+
+try {
+    favorites = JSON.parse(localStorage.getItem("catalogFavorites")) || [];
+    favorites = favorites.filter(id => catalog[id]);
+} catch (e) {
+    favorites = [];
+}
+
+function saveFavorites() {
+    try {
+        localStorage.setItem("catalogFavorites", JSON.stringify(favorites));
+    } catch (e) { /* ігноруємо */ }
+}
+
+function updateFavoriteCount() {
+    favoriteCount.textContent = favorites.length;
+    favoriteCount.style.display = favorites.length ? "flex" : "none";
+}
+
+function toggleFavorite(id) {
+    const index = favorites.indexOf(id);
+
+    if (index === -1) {
+        favorites.push(id);
+    } else {
+        favorites.splice(index, 1);
+    }
+
+    saveFavorites();
+    updateFavoriteCount();
+    renderFavorites();
+}
+
+// Оновити вигляд сердечка на картці без перемальовування всього списку
+function syncFavoriteButtons() {
+    catalogProducts.querySelectorAll(".product-favorite").forEach(btn => {
+        const isFav = favorites.includes(Number(btn.dataset.favId));
+
+        btn.classList.toggle("active", isFav);
+        btn.textContent = isFav ? "♥" : "♡";
+        btn.setAttribute("aria-pressed", isFav);
+        btn.title = isFav ? "Прибрати з обраного" : "Додати в обране";
+    });
+}
+
+function renderFavorites() {
+
+    syncFavoriteButtons();
+
+    if (!favorites.length) {
+        favoritesList.innerHTML =
+            '<p class="empty-favorites">У вас поки немає обраних товарів</p>';
+        return;
+    }
+
+    favoritesList.innerHTML = favorites.map(id => {
+        const p = catalog[id];
+
+        return `
+        <div class="cart-item">
+
+            <img src="${p.photo}" alt=""
+                 onerror="this.onerror=null; this.src=FALLBACK_IMG;">
+
+            <div class="cart-item-info">
+                <strong>${escapeHtml(p.name)}</strong>
+                <span>${formatPrice(p.price)}</span>
+            </div>
+
+            <div class="cart-item-side">
+                <button class="remove-item" style="color:#f60"
+                        data-fav-action="cart" data-id="${id}">
+                    В кошик
+                </button>
+
+                <button class="remove-item"
+                        data-fav-action="remove" data-id="${id}">
+                    Видалити
+                </button>
+            </div>
+
+        </div>`;
+    }).join("");
+}
+
+// Клік по сердечку на картці товару
+catalogProducts.addEventListener("click", function (e) {
+    const btn = e.target.closest(".product-favorite");
+    if (!btn) return;
+
+    toggleFavorite(Number(btn.dataset.favId));
+});
+
+// Кнопки всередині вікна "Обране"
+favoritesList.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-fav-action]");
+    if (!btn) return;
+
+    const id = Number(btn.dataset.id);
+
+    if (btn.dataset.favAction === "remove") toggleFavorite(id);
+    if (btn.dataset.favAction === "cart") addToCart(id);
+});
+
+// Відкрити / закрити вікно "Обране"
+document.getElementById("favoritesBtn").addEventListener("click", () => {
+    renderFavorites();
+    favoritesModal.classList.add("active");
+});
+
+document.getElementById("closeFavorites").addEventListener("click", () => {
+    favoritesModal.classList.remove("active");
+});
+
+favoritesModal.addEventListener("click", function (e) {
+    if (e.target === favoritesModal) favoritesModal.classList.remove("active");
+});
+
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") favoritesModal.classList.remove("active");
+});
+
+updateFavoriteCount();
+renderFavorites();
 
 
 /* =========================================================
