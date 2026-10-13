@@ -438,8 +438,8 @@ img {
 .floating-card {
     position: absolute;
 
-    width: 75px;
-    height: 75px;
+    width: 135px;
+    height: 135px;
 
     display: grid;
     place-items: center;
@@ -1232,8 +1232,8 @@ footer a:hover {
     }
 
     .floating-card {
-        width: 55px;
-        height: 55px;
+        width: 85px;
+        height: 85px;
 
         font-size: 25px;
     }
