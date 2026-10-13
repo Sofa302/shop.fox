@@ -1637,3 +1637,137 @@ footer a:hover {
     font-size: 13px;
     font-weight: 600;
 }
+
+
+/* =========================================================
+   АНІМАЦІЇ КАТАЛОГУ
+========================================================= */
+
+/* Поява карток (з невеликою затримкою по черзі) */
+.product-card {
+    animation: cardIn .4s ease backwards;
+    animation-delay: calc(var(--i, 0) * 30ms);
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кнопка "в кошик" */
+.buy-btn {
+    position: relative;
+    box-shadow: 0 3px 10px rgba(255, 91, 0, .25);
+}
+
+.buy-btn::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border: 2px solid var(--green);
+    border-radius: inherit;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.buy-btn.pop {
+    animation: btnPop .45s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.buy-btn.pop::after {
+    animation: btnRing .6s ease-out;
+}
+
+.buy-btn.added {
+    box-shadow: 0 3px 10px rgba(45, 150, 53, .35);
+}
+
+.buy-btn.added svg path {
+    stroke-dasharray: 26;
+    stroke-dashoffset: 26;
+
+    animation: drawCheck .35s .05s ease forwards;
+}
+
+@keyframes btnPop {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
+@keyframes btnRing {
+    0%   { opacity: .8; transform: scale(1); }
+    100% { opacity: 0;  transform: scale(1.8); }
+}
+
+@keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Кружечок, що летить у кошик */
+.fly-dot {
+    position: fixed;
+    z-index: 2000;
+
+    width: 18px;
+    height: 18px;
+
+    background: var(--orange);
+    border-radius: 50%;
+
+    box-shadow: 0 4px 14px rgba(255, 91, 0, .5);
+
+    pointer-events: none;
+}
+
+/* Іконка кошика в шапці */
+#cartBtn .action-icon {
+    display: inline-block;
+}
+
+#cartBtn.wiggle .action-icon {
+    animation: cartWiggle .55s ease;
+}
+
+@keyframes cartWiggle {
+    0%, 100% { transform: rotate(0); }
+    20%      { transform: rotate(-14deg); }
+    40%      { transform: rotate(12deg); }
+    60%      { transform: rotate(-8deg); }
+    80%      { transform: rotate(4deg); }
+}
+
+/* Сердечко */
+.product-favorite.pop {
+    animation: heartPop .4s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+@keyframes heartPop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.35); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .buy-btn.pop,
+    .buy-btn.pop::after,
+    .buy-btn.added svg path,
+    #cartBtn.wiggle .action-icon,
+    .product-favorite.pop {
+        animation: none;
+    }
+
+    .buy-btn.added svg path {
+        stroke-dashoffset: 0;
+    }
+}
